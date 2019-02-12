@@ -4,6 +4,8 @@
 % rd is domestic rate (or risk-free rate in BS)
 % rf is foreign rate (or dividend rate (q) in BS)
 
+% Kaveh Tehrani
+
 classdef bs_option
     methods(Static = true)
         % d1 and d2 in BS
