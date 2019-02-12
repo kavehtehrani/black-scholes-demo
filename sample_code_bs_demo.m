@@ -1,5 +1,5 @@
 % Kaveh Tehrani
-% Show casing greek surfaces for vanilla calls and puts
+% Showcasing greek surfaces for vanilla calls and puts
 
 clc; close all; clear; tic;
 
