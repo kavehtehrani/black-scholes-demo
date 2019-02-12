@@ -58,20 +58,12 @@ classdef bs_option
                 error('abs(delta) cannot be greater than one.');        
             end
             
-%             if (nargin < 8) || (b_display == false)
-%                 b_display                           = false;
-%                 options                             = optimoptions(@lsqnonlin, 'display', 'off');
-%             else
-%                 options                             = optimoptions(@lsqnonlin);
-%             end
-            
             init_k_guess                            = s0;
             
             func_k              = @(k)              nested_delta(opt_type, tgt_delta, s0, k, rd, ttm, sigma, rf);
 
             
             [ k, resnorm, res, exitflag ]           = lsqnonlin(func_k, init_k_guess, 0, s0*UPPER_X);
-%             [ k, resnorm, res, exitflag ]           = lsqnonlin(func_k, init_k_guess, 0, s0*UPPER_X, options);
             if exitflag ~= 1 && exitflag ~= 3,      
                 k = [];     
             end
